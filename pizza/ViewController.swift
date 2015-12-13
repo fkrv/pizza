@@ -53,6 +53,7 @@ class ViewController: UIViewController,
     }
     
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var imagenPizza: UIImageView!
     
     lazy var numeroDeValoresPorComponente: Int = Tamaño.count
     var tamañoElegido : Tamaño = .Chica
@@ -100,17 +101,32 @@ class ViewController: UIViewController,
         switch (row ) {
         case 0:
             tamañoElegido = .Chica
+            imagenPizza.image = UIImage(named: "pizzaChica")            
             break
         case 1:
             tamañoElegido = .Mediana
+            imagenPizza.image = UIImage(named: "pizzaMediana")
             break
         default:
             tamañoElegido = .Grande
+            imagenPizza.image = UIImage(named: "pizzaGrande")
         }
         
         title = NSMutableAttributedString(string: tamañoElegido.getEtiqueta() )
         
         return title
+    }
+    
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+        
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
+        image.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
