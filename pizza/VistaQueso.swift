@@ -1,47 +1,47 @@
 //
-//  ViewController.swift
+//  VistaQueso.swift
 //  pizza
 //
-//  Created by Angel Agustín Martínez on 11/12/15.
+//  Created by Angel Agustín Martínez on 12/12/15.
 //  Copyright © 2015 Angel Agustín Martínez. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController,
+class VistaQueso: UIViewController,
     UIPickerViewDataSource,
     UIPickerViewDelegate,
     UIPickerViewAccessibilityDelegate {
 
     enum ComponentesEnPicker: Int {
-        case tamaños = 0
+        case quesos = 0
         
         static var count: Int {
-            return ComponentesEnPicker.tamaños.rawValue + 1
+            return ComponentesEnPicker.quesos.rawValue + 1
         }
     }
     
-    enum Tamaño: Int {
-        case Chica = 0, Mediana, Grande
+    enum Queso: Int {
+        case Cheddar = 0, Parmesano = 1, SinQueso = 2
         
         init() {
-            self = .Chica
+            self = .SinQueso
         }
         
         static var count: Int {
-            return Tamaño.Grande.rawValue + 1
+            return Queso.SinQueso.rawValue + 1
         }
         
         func getEtiqueta() -> String{
             var etiqueta = ""
             
             switch(self){
-            case .Chica:
-                etiqueta = "Chica"
-            case .Mediana:
-                etiqueta = "Mediana"
-            case .Grande:
-                etiqueta = "Grande"
+            case .Cheddar:
+                etiqueta = "Cheddar"
+            case .Parmesano:
+                etiqueta = "Parmesano"
+            case .SinQueso:
+                etiqueta = "Sin queso"
             }
             
             return etiqueta
@@ -54,35 +54,47 @@ class ViewController: UIViewController,
     
     @IBOutlet weak var pickerView: UIPickerView!
     
-    lazy var numeroDeValoresPorComponente: Int = Tamaño.count
-    var tamañoElegido : Tamaño = .Chica
+    lazy var numeroDeValoresPorComponente: Int = Queso.count
+    var quesoElegido : Queso = .SinQueso
+    
+    var tamañoElegido = "";
+    var masaElegida = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        configurePickerView()
+
+        // Do any additional setup after loading the view.
     }
 
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+    
     func configurePickerView() {
         // Show that a given row is selected. This is off by default.
         pickerView.showsSelectionIndicator = true
         
         // Set the default selected rows.
-        let filas: [ComponentesEnPicker: Int] = [.tamaños: 1]
+        let filas: [ComponentesEnPicker: Int] = [.quesos: 1]
         
-        for (scrollTamaños, filaSeleccionada) in filas {
+        for (scrollQuesos, filaSeleccionada) in filas {
             /*
             Note that the delegate method on `UIPickerViewDelegate` is not triggered
             when manually calling `selectRow(_:inComponent:animated:)`. To do
             this, we fire off delegate method manually.
             */
-            pickerView.selectRow(filaSeleccionada, inComponent: scrollTamaños.rawValue, animated: true)
+            pickerView.selectRow(filaSeleccionada, inComponent: scrollQuesos.rawValue, animated: true)
         }
     }
 
@@ -99,23 +111,24 @@ class ViewController: UIViewController,
         var title = NSMutableAttributedString(string: "")
         switch (row ) {
         case 0:
-            tamañoElegido = .Chica
+            quesoElegido = .Cheddar
             break
         case 1:
-            tamañoElegido = .Mediana
+            quesoElegido = .Parmesano
             break
         default:
-            tamañoElegido = .Grande
+            quesoElegido = .SinQueso
         }
         
-        title = NSMutableAttributedString(string: tamañoElegido.getEtiqueta() )
+        title = NSMutableAttributedString(string: quesoElegido.getEtiqueta() )
         
         return title
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let siguienteVista = segue.destinationViewController as! VistaMasa
-        siguienteVista.tamañoElegido = self.tamañoElegido.getEtiqueta()
+        let siguienteVista = segue.destinationViewController as! VistaIngredientes
+        siguienteVista.tamañoElegido = self.tamañoElegido
+        siguienteVista.masaElegida = self.masaElegida
+        siguienteVista.quesoElegido = self.quesoElegido.getEtiqueta()
     }
 }
-

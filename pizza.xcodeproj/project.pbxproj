@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A221ECD1C1BA0750051C5CF /* VistaMasa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A221ECC1C1BA0750051C5CF /* VistaMasa.swift */; };
+		8A3964761C1C8FE2002DD6B7 /* VistaConfirmacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3964751C1C8FE2002DD6B7 /* VistaConfirmacion.swift */; };
+		8A3964781C1C916A002DD6B7 /* VistaQueso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3964771C1C916A002DD6B7 /* VistaQueso.swift */; };
+		8A39647A1C1C917F002DD6B7 /* VistaIngredientes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3964791C1C917F002DD6B7 /* VistaIngredientes.swift */; };
 		8A4B1B551C1AB97F009E2168 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B1B541C1AB97F009E2168 /* AppDelegate.swift */; };
 		8A4B1B571C1AB97F009E2168 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B1B561C1AB97F009E2168 /* ViewController.swift */; };
 		8A4B1B5A1C1AB97F009E2168 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B1B581C1AB97F009E2168 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A221ECC1C1BA0750051C5CF /* VistaMasa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VistaMasa.swift; sourceTree = "<group>"; };
+		8A3964751C1C8FE2002DD6B7 /* VistaConfirmacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VistaConfirmacion.swift; sourceTree = "<group>"; };
+		8A3964771C1C916A002DD6B7 /* VistaQueso.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VistaQueso.swift; sourceTree = "<group>"; };
+		8A3964791C1C917F002DD6B7 /* VistaIngredientes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VistaIngredientes.swift; sourceTree = "<group>"; };
 		8A4B1B511C1AB97F009E2168 /* pizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4B1B541C1AB97F009E2168 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A4B1B561C1AB97F009E2168 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,9 +65,13 @@
 				8A4B1B541C1AB97F009E2168 /* AppDelegate.swift */,
 				8A4B1B561C1AB97F009E2168 /* ViewController.swift */,
 				8A4B1B581C1AB97F009E2168 /* Main.storyboard */,
+				8A3964791C1C917F002DD6B7 /* VistaIngredientes.swift */,
+				8A3964771C1C916A002DD6B7 /* VistaQueso.swift */,
+				8A3964751C1C8FE2002DD6B7 /* VistaConfirmacion.swift */,
 				8A4B1B5B1C1AB97F009E2168 /* Assets.xcassets */,
 				8A4B1B5D1C1AB97F009E2168 /* LaunchScreen.storyboard */,
 				8A4B1B601C1AB97F009E2168 /* Info.plist */,
+				8A221ECC1C1BA0750051C5CF /* VistaMasa.swift */,
 			);
 			path = pizza;
 			sourceTree = "<group>";
@@ -136,6 +148,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A4B1B571C1AB97F009E2168 /* ViewController.swift in Sources */,
+				8A3964781C1C916A002DD6B7 /* VistaQueso.swift in Sources */,
+				8A39647A1C1C917F002DD6B7 /* VistaIngredientes.swift in Sources */,
+				8A3964761C1C8FE2002DD6B7 /* VistaConfirmacion.swift in Sources */,
+				8A221ECD1C1BA0750051C5CF /* VistaMasa.swift in Sources */,
 				8A4B1B551C1AB97F009E2168 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +300,7 @@
 				8A4B1B651C1AB97F009E2168 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

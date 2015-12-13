@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  VistaMasa.swift
 //  pizza
 //
 //  Created by Angel Agustín Martínez on 11/12/15.
@@ -8,40 +8,40 @@
 
 import UIKit
 
-class ViewController: UIViewController,
+class VistaMasa: UIViewController,
     UIPickerViewDataSource,
     UIPickerViewDelegate,
     UIPickerViewAccessibilityDelegate {
 
     enum ComponentesEnPicker: Int {
-        case tamaños = 0
+        case masas = 0
         
         static var count: Int {
-            return ComponentesEnPicker.tamaños.rawValue + 1
+            return ComponentesEnPicker.masas.rawValue + 1
         }
     }
     
-    enum Tamaño: Int {
-        case Chica = 0, Mediana, Grande
+    enum Masa: Int {
+        case Delgada = 0, Crujiente, Gruesa
         
         init() {
-            self = .Chica
+            self = .Delgada
         }
         
         static var count: Int {
-            return Tamaño.Grande.rawValue + 1
+            return Masa.Gruesa.rawValue + 1
         }
         
         func getEtiqueta() -> String{
             var etiqueta = ""
             
             switch(self){
-            case .Chica:
-                etiqueta = "Chica"
-            case .Mediana:
-                etiqueta = "Mediana"
-            case .Grande:
-                etiqueta = "Grande"
+            case .Delgada:
+                etiqueta = "Delgada"
+            case .Crujiente:
+                etiqueta = "Crujiente"
+            case .Gruesa:
+                etiqueta = "Gruesa"
             }
             
             return etiqueta
@@ -54,38 +54,50 @@ class ViewController: UIViewController,
     
     @IBOutlet weak var pickerView: UIPickerView!
     
-    lazy var numeroDeValoresPorComponente: Int = Tamaño.count
-    var tamañoElegido : Tamaño = .Chica
+    lazy var numeroDeValoresPorComponente: Int = Masa.count
+    var masaElegida : Masa = .Delgada
+    
+    var tamañoElegido = "";
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
         configurePickerView()
     }
 
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
     func configurePickerView() {
         // Show that a given row is selected. This is off by default.
         pickerView.showsSelectionIndicator = true
         
         // Set the default selected rows.
-        let filas: [ComponentesEnPicker: Int] = [.tamaños: 1]
+        let filas: [ComponentesEnPicker: Int] = [.masas: 1]
         
-        for (scrollTamaños, filaSeleccionada) in filas {
+        for (scrollMasas, filaSeleccionada) in filas {
             /*
             Note that the delegate method on `UIPickerViewDelegate` is not triggered
             when manually calling `selectRow(_:inComponent:animated:)`. To do
             this, we fire off delegate method manually.
             */
-            pickerView.selectRow(filaSeleccionada, inComponent: scrollTamaños.rawValue, animated: true)
+            pickerView.selectRow(filaSeleccionada, inComponent: scrollMasas.rawValue, animated: true)
         }
     }
-
+    
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return ComponentesEnPicker.count
     }
@@ -99,23 +111,23 @@ class ViewController: UIViewController,
         var title = NSMutableAttributedString(string: "")
         switch (row ) {
         case 0:
-            tamañoElegido = .Chica
+            masaElegida = .Delgada
             break
         case 1:
-            tamañoElegido = .Mediana
+            masaElegida = .Crujiente
             break
         default:
-            tamañoElegido = .Grande
+            masaElegida = .Gruesa
         }
         
-        title = NSMutableAttributedString(string: tamañoElegido.getEtiqueta() )
+        title = NSMutableAttributedString(string: masaElegida.getEtiqueta() )
         
         return title
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let siguienteVista = segue.destinationViewController as! VistaMasa
-        siguienteVista.tamañoElegido = self.tamañoElegido.getEtiqueta()
+        let siguienteVista = segue.destinationViewController as! VistaQueso
+        siguienteVista.tamañoElegido = self.tamañoElegido
+        siguienteVista.masaElegida = self.masaElegida.getEtiqueta()
     }
 }
-
