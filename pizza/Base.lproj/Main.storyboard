@@ -18,16 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Por favor, seleccione el tamaño de su pizza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKt-nU-9p8">
-                                <rect key="frame" x="136" y="72" width="329" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="329" id="hF2-v8-AXz"/>
-                                    <constraint firstAttribute="height" constant="21" id="woK-pJ-D7d"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eLM-od-mfy">
                                 <rect key="frame" x="0.0" y="256" width="600" height="216"/>
                                 <connections>
@@ -38,20 +28,29 @@
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizzaMediana" translatesAutoresizingMaskIntoConstraints="NO" id="d86-mW-SCi">
                                 <rect key="frame" x="220" y="154" width="160" height="81"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="7gN-Ug-e3t"/>
                                     <constraint firstAttribute="width" constant="160" id="ILU-Ve-WwO"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleccione el tamaño de su pizza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKt-nU-9p8">
+                                <rect key="frame" x="162" y="72" width="277" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="jZ4-mY-zry"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eLM-od-mfy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="82C-V9-KlW"/>
-                            <constraint firstItem="wKt-nU-9p8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="RRM-Wo-Z65"/>
-                            <constraint firstItem="wKt-nU-9p8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="0.5" id="Tae-8Z-0bg"/>
+                            <constraint firstItem="d86-mW-SCi" firstAttribute="top" secondItem="wKt-nU-9p8" secondAttribute="bottom" constant="61" id="KCC-A2-lqC"/>
                             <constraint firstItem="eLM-od-mfy" firstAttribute="top" secondItem="d86-mW-SCi" secondAttribute="bottom" constant="21" id="a4b-e9-3fz"/>
                             <constraint firstItem="eLM-od-mfy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="aoO-iN-FKp"/>
-                            <constraint firstItem="d86-mW-SCi" firstAttribute="top" secondItem="wKt-nU-9p8" secondAttribute="bottom" constant="61" id="bvE-wk-MWQ"/>
-                            <constraint firstItem="eLM-od-mfy" firstAttribute="top" secondItem="wKt-nU-9p8" secondAttribute="bottom" constant="163" id="cHt-Uc-JWt"/>
                             <constraint firstItem="d86-mW-SCi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eXN-tZ-U6e"/>
+                            <constraint firstItem="wKt-nU-9p8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kwF-mG-SHb"/>
+                            <constraint firstItem="wKt-nU-9p8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="xLN-wT-OHE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tamaño" id="Syg-ZC-iV3">
@@ -82,15 +81,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Por favor, seleccione el tipo de masa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rz-ma-HG1">
-                                <rect key="frame" x="161" y="72" width="279" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="LMA-Pk-eAu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28H-Iq-jqw">
                                 <rect key="frame" x="0.0" y="101" width="600" height="216"/>
                                 <connections>
@@ -98,6 +88,15 @@
                                     <outlet property="delegate" destination="AwC-cj-WeG" id="yZ9-xL-cIj"/>
                                 </connections>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="seleccione el tipo de masa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rz-ma-HG1">
+                                <rect key="frame" x="190.5" y="72" width="220.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="LMA-Pk-eAu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -135,15 +134,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Por favor, seleccione el tipo de queso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JnY-gE-1Md">
-                                <rect key="frame" x="158" y="72" width="285" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="JB2-UB-dvT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oUO-T0-WNa">
                                 <rect key="frame" x="0.0" y="101" width="600" height="216"/>
                                 <connections>
@@ -151,6 +141,15 @@
                                     <outlet property="delegate" destination="DMl-wQ-iy1" id="Efi-Aj-eyE"/>
                                 </connections>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleccione el tipo de queso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JnY-gE-1Md">
+                                <rect key="frame" x="186" y="72" width="229" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="JB2-UB-dvT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -260,12 +259,12 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aUt-O8-xPV">
                                 <rect key="frame" x="315" y="375" width="51" height="31"/>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Por favor, seleccione de 1 a 5 ingredientes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohd-yT-WSY">
-                                <rect key="frame" x="140" y="73" width="321" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleccione de 1 a 5 ingredientes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohd-yT-WSY">
+                                <rect key="frame" x="164" y="72" width="273" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="321" id="iP2-FA-9eh"/>
+                                    <constraint firstAttribute="width" constant="273" id="iP2-FA-9eh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -290,13 +289,13 @@
                             <constraint firstItem="dZP-7p-15C" firstAttribute="centerX" secondItem="gG6-LC-zLx" secondAttribute="centerX" constant="-92" id="ITX-Uu-qUP"/>
                             <constraint firstItem="RNY-ly-2a5" firstAttribute="centerY" secondItem="7db-2O-zFa" secondAttribute="centerY" id="JeQ-VI-IMP"/>
                             <constraint firstItem="ajd-u4-afL" firstAttribute="leading" secondItem="Wtk-GE-9Qy" secondAttribute="leading" id="LNH-7d-qkd"/>
-                            <constraint firstItem="MRS-0z-PPt" firstAttribute="top" secondItem="Ohd-yT-WSY" secondAttribute="bottom" constant="8" id="MBY-Hz-pXK"/>
+                            <constraint firstItem="MRS-0z-PPt" firstAttribute="top" secondItem="Ohd-yT-WSY" secondAttribute="bottom" constant="9" id="MBY-Hz-pXK"/>
                             <constraint firstItem="MRS-0z-PPt" firstAttribute="top" secondItem="0xv-u1-TvS" secondAttribute="bottom" constant="38" id="S7h-ft-fD3"/>
                             <constraint firstItem="ajd-u4-afL" firstAttribute="centerX" secondItem="gG6-LC-zLx" secondAttribute="centerX" constant="-82" id="XNt-D8-m3M"/>
                             <constraint firstItem="7db-2O-zFa" firstAttribute="centerX" secondItem="gG6-LC-zLx" secondAttribute="centerX" constant="-87.5" id="ZZZ-ZC-d10"/>
                             <constraint firstItem="dZP-7p-15C" firstAttribute="top" secondItem="LrA-Y3-AJw" secondAttribute="bottom" constant="18" id="avy-BF-YWR"/>
                             <constraint firstItem="z9t-iE-pxZ" firstAttribute="centerX" secondItem="gG6-LC-zLx" secondAttribute="centerX" constant="-91.5" id="b2M-wm-4zH"/>
-                            <constraint firstItem="Ohd-yT-WSY" firstAttribute="top" secondItem="0xv-u1-TvS" secondAttribute="bottom" constant="9" id="b4v-2z-y01"/>
+                            <constraint firstItem="Ohd-yT-WSY" firstAttribute="top" secondItem="0xv-u1-TvS" secondAttribute="bottom" constant="8" id="b4v-2z-y01"/>
                             <constraint firstItem="MRS-0z-PPt" firstAttribute="centerY" secondItem="Wtk-GE-9Qy" secondAttribute="centerY" id="b6u-9i-5NA"/>
                             <constraint firstItem="aUt-O8-xPV" firstAttribute="centerX" secondItem="gG6-LC-zLx" secondAttribute="centerX" constant="39.5" id="bny-fU-0jl"/>
                             <constraint firstItem="ajd-u4-afL" firstAttribute="top" secondItem="Wtk-GE-9Qy" secondAttribute="bottom" constant="18" id="dzD-cs-BAQ"/>
@@ -355,49 +354,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Es la pizza que desea ordenar?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jl-7m-gEj">
-                                <rect key="frame" x="178" y="73" width="245" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="167" y="72.5" width="267.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBc-3r-UmN">
-                                <rect key="frame" x="279" y="130" width="42" height="21"/>
+                                <rect key="frame" x="279" y="129.5" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xkg-gj-8l9">
-                                <rect key="frame" x="279" y="182" width="42" height="21"/>
+                                <rect key="frame" x="279" y="181.5" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgX-y8-oHA">
-                                <rect key="frame" x="279" y="227" width="42" height="21"/>
+                                <rect key="frame" x="279" y="226.5" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tamaño:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2N-ZY-etp">
-                                <rect key="frame" x="189" y="130" width="66" height="21"/>
+                                <rect key="frame" x="188.5" y="129.5" width="65.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Masa:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncy-xB-pIY">
-                                <rect key="frame" x="188" y="181" width="46" height="21"/>
+                                <rect key="frame" x="188" y="180.5" width="46" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Queso:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGU-H5-78B">
-                                <rect key="frame" x="189" y="227" width="55" height="21"/>
+                                <rect key="frame" x="188.5" y="226.5" width="54.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredientes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJk-n4-doP">
-                                <rect key="frame" x="250" y="290" width="100" height="21"/>
+                                <rect key="frame" x="250" y="290.5" width="100" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -417,7 +416,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="EJb-K7-z7G">
-                                <rect key="frame" x="282" y="351" width="38" height="18"/>
+                                <rect key="frame" x="281.5" y="351" width="37.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -474,12 +473,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Su orden se ha procesado con exito!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgH-cU-2R9">
-                                <rect key="frame" x="169" y="87" width="289" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Su orden se ha procesado con exito" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgH-cU-2R9">
+                                <rect key="frame" x="139" y="87" width="323" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="289" id="0jw-nR-Oob"/>
+                                    <constraint firstAttribute="width" constant="323" id="0jw-nR-Oob"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -490,12 +489,21 @@
                                     <segue destination="61a-7t-1vi" kind="show" id="HvU-uD-Eme"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gracias!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAh-Qb-F7V">
+                                <rect key="frame" x="246" y="157" width="109" height="65"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JIb-oU-ZeZ" firstAttribute="centerX" secondItem="ZTI-Wi-7xC" secondAttribute="centerX" constant="13" id="0IZ-xT-VI0"/>
-                            <constraint firstItem="wgH-cU-2R9" firstAttribute="centerX" secondItem="ZTI-Wi-7xC" secondAttribute="centerX" constant="13.5" id="0bv-xN-5m1"/>
+                            <constraint firstItem="wgH-cU-2R9" firstAttribute="centerX" secondItem="ZTI-Wi-7xC" secondAttribute="centerX" constant="0.5" id="0bv-xN-5m1"/>
+                            <constraint firstItem="tAh-Qb-F7V" firstAttribute="centerX" secondItem="ZTI-Wi-7xC" secondAttribute="centerX" id="NCd-J1-cch"/>
                             <constraint firstItem="wgH-cU-2R9" firstAttribute="centerY" secondItem="ZTI-Wi-7xC" secondAttribute="centerY" constant="-202.5" id="O2f-BD-gwY"/>
+                            <constraint firstItem="JIb-oU-ZeZ" firstAttribute="top" secondItem="tAh-Qb-F7V" secondAttribute="bottom" constant="77" id="PTp-C0-P5I"/>
+                            <constraint firstItem="tAh-Qb-F7V" firstAttribute="top" secondItem="wgH-cU-2R9" secondAttribute="bottom" constant="49" id="UEr-b7-CeW"/>
                             <constraint firstItem="JIb-oU-ZeZ" firstAttribute="top" secondItem="wgH-cU-2R9" secondAttribute="bottom" constant="191" id="qBy-o9-YdT"/>
                             <constraint firstItem="wgH-cU-2R9" firstAttribute="top" secondItem="1Go-XY-LDg" secondAttribute="bottom" constant="67" id="yYS-t1-vrU"/>
                         </constraints>
