@@ -22,7 +22,7 @@ class VistaQueso: UIViewController,
     }
     
     enum Queso: Int {
-        case Cheddar = 0, Parmesano = 1, SinQueso = 2
+        case Mozarela = 0, Cheddar, Parmesano, SinQueso
         
         init() {
             self = .SinQueso
@@ -36,6 +36,8 @@ class VistaQueso: UIViewController,
             var etiqueta = ""
             
             switch(self){
+            case .Mozarela:
+                etiqueta = "Mozarela"
             case .Cheddar:
                 etiqueta = "Cheddar"
             case .Parmesano:
@@ -111,9 +113,11 @@ class VistaQueso: UIViewController,
         var title = NSMutableAttributedString(string: "")
         switch (row ) {
         case 0:
+            quesoElegido = .Mozarela
+        case 1:
             quesoElegido = .Cheddar
             break
-        case 1:
+        case 2:
             quesoElegido = .Parmesano
             break
         default:
